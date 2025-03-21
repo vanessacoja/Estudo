@@ -9,4 +9,4 @@ export default function FotoIdPage() {
       <h1>Foto id: {id}</h1>
     </main>
   );
-}
+}                                                                                            
