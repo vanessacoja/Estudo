@@ -21,8 +21,8 @@ export default function Header() {
         </Link>
 
         {user ? (
-          <Link href="/account" passHref className={styles.login}>
-            Minha Conta
+          <Link href="/account" passHref className={styles.conta}>
+              Login / Criar
           </Link>
         ) : (
           <Link href="/login" passHref  className={styles.login}>

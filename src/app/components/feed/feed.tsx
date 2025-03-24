@@ -1,13 +1,16 @@
-import { Photo } from "@/actions/photo-get"; // Certifique-se que esse caminho está certo
+//import { Photo } from "@/actions/photo-get"; // Certifique-se que esse caminho está certo
 
-export default function Feed({ photos }: { photos: Photo[] }) {
+import FeedPhotos from "./feed.photos";
+
+export default function Feed({ photos }: {photos: any}) {
+
   return (
-    <ul>
-      {photos.map((photo, i) => (
-        <li key={photo.id + '-' + i}>
-          {photo.title}
-        </li>
-      ))}
-    </ul>
+    <div>
+      <FeedPhotos photos={photos}/>
+    </div>
   );
 }
+
+
+
+

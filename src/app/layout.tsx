@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { type_second } from "./fonts/fonts";
-import Footer from './componeents/footer';
+// import Footer from './components/footer';
 import Header from "./components/header"; // Importação do Header corrigida
+import Footer from "./components/footer/footer";
 
 export const metadata: Metadata = {
   title: "Create Next",
@@ -19,7 +20,7 @@ export default function RootLayout({
       <body className={type_second.variable}>
         <Header /> {/* O Header agora está dentro da <body> */}
         {children} {/* O conteúdo dinâmico da página será renderizado corretamente */}
-        <Footer /> {/* O Footer agora também está dentro da <body> */}
+        <Footer/>
       </body>
     </html>
   );
