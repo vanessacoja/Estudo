@@ -1,44 +1,44 @@
-//import login from '@/actions/login';
-//import { useFormState, useFormStatus } from 'react-dom';
-//import Button from '@/components/forms/button';
-//import Input from '@/components/forms/input';
-//import ErrorMessage from '../helper/error-message';
 'use client';
 
-import React from 'react';
+import React, { useTransition } from 'react';
 import Link from 'next/link';
-import { useFormState } from 'react-dom'; // se estiver usando o 'react-dom' do Next.js 13+
-import styles from './login-form.module.css';
-//import Input from './Input';
-//import ErrorMessage from './ErrorMessage';
-//import { login } from '../actions/login'; // importe sua função de login
+import { useFormState } from 'react-dom';
+import styles from  './Login.Form.module.css';
+
+import Input from './Login.InputComponent';
+import ErrorMessage from './ErrorMessage';
+import { login } from '../actions/login';
 
 function FormButton({ pending }: { pending: boolean }) {
   return (
-    <>
-      {pending ? (
-        <button disabled>Enviando...</button>
-      ) : (
-        <button type="submit">Entrar</button>
-      )}
-    </>
+    <button type="submit" disabled={pending}>
+      {pending ? 'Enviando...' : 'Entrar'}
+    </button>
   );
 }
 
 export default function LoginForm() {
-  const [state, action] = useFormState(login, {
+  const [state, formAction] = useFormState(login, {
     ok: false,
     error: '',
     data: null,
   });
 
+  const [isPending, startTransition] = useTransition();
+
+  const handleAction = (formData: FormData) => {
+    startTransition(() => {
+      formAction(formData);
+    });
+  };
+
   return (
     <>
-      <form action={action} className={styles.form}>
+      <form action={handleAction} className={styles.form}>
         <Input label="Usuário" name="username" type="text" />
         <Input label="Senha" name="password" type="password" />
-        <ErrorMessage error={state.error} />
-        <FormButton pending={state.pending} />
+        {state.error && <ErrorMessage error={state.error} />}
+        <FormButton pending={isPending} />
       </form>
 
       <Link className={styles.perdeu} href="/login/perdeu">

@@ -1,0 +1,50 @@
+/* Estilo para o formulário */
+.form {
+    margin-bottom: 2rem; /* Espaço inferior para separar de outros elementos abaixo */
+  }
+  
+  /* Estilo para o link "Perdeu a senha?" */
+  .perdeu {
+    display: inline-block; /* Permite aplicar padding e margin mesmo sendo um link */
+    color: #666;            /* Cor do texto em cinza escuro */
+    padding: 0.5rem 0;      /* Espaçamento vertical */
+    line-height: 1;         /* Altura da linha igual à altura do texto */
+  }
+  
+  /* Cria uma linha abaixo do link "Perdeu a senha?" */
+  .perdeu::after {
+    content: '';               /* Cria um elemento vazio */
+    height: 2px;               /* Altura da linha */
+    width: 100%;               /* Largura total do link */
+    background: currentColor; /* Cor igual ao texto do link */
+    display: block;            /* Exibe a linha como bloco abaixo do texto */
+  }
+  
+  /* Seção de cadastro (parte inferior do formulário) */
+  .cadastro {
+    margin-top: 4rem;     /* Espaço acima da seção */
+    margin-bottom: 4rem;  /* Espaço abaixo da seção */
+  }
+  
+  /* Parágrafos dentro da seção de cadastro */
+  .cadastro p {
+    margin-top: 2rem;     /* Espaço acima do parágrafo */
+    margin-bottom: 2rem;  /* Espaço abaixo do parágrafo */
+  }
+  
+  /* Estilo para subtítulos (ex: "Cadastre-se") */
+  .subtitle {
+    font-family: var(--type-second); /* Fonte definida pela variável CSS */
+    line-height: 1;                  /* Altura da linha compacta */
+    font-size: 2rem;                 /* Tamanho grande do subtítulo */
+  }
+  
+  /* Linha decorativa abaixo do subtítulo */
+  .subtitle::after {
+    content: '';              /* Elemento vazio */
+    display: block;           /* Bloco abaixo do subtítulo */
+    background: #ddd;         /* Cor cinza claro */
+    height: 0.5rem;           /* Altura da barrinha */
+    width: 3rem;              /* Largura da barrinha */
+    border-radius: 0.2rem;    /* Cantos levemente arredondados */
+  }
