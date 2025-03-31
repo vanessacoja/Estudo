@@ -2,7 +2,7 @@
 
 //import { PASSWORD_RESET } from '@/functions/api';
 //port apiError from '@/functions/api-error';
-//import { redirect } from 'next/navigation';
+import { redirect } from 'next/navigation';
 
 //PASSWORD_RESET: uma função que retorna a URL da API de redefinição de senha.
 

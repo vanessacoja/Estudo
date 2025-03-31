@@ -1,6 +1,6 @@
 import React from 'react';
-//import Input from '../Forms/Input';
-//import Button from '../Forms/Button';
+import Input from '../forms/input';
+import Button from '../forms/button';
 //import Error from '../Helper/Error';
 //import useForm from '../../Hooks/useForm';
 //import { USER_POST } from '../../Api';

@@ -1,8 +1,8 @@
 //import {PASSWORD_LOST} from '@/functio/api';
-//import { ApiError } from '@/function/ApiError';
+import 'ApiError' from '../../src/app/components/functions/api-error';
 
 
-export default async function passwordLost(state: {}, formData: FormData) {
+export default async function passwordLost(state: '{}', formData: FormData) {
     const login = formData.get('login') as string | null;
     const urlPerdeu = formData.get('url') as string | null;
   

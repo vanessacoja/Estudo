@@ -1,4 +1,4 @@
-export default function apiError(error: unknown): { //pertite importar essa função direito com import apierror from
+export default function ApiError(error: unknown): { //pertite importar essa função direito com import apierror from
     data: null;
     ok: false;
     error: string;

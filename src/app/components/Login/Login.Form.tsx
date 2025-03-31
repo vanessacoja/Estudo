@@ -5,20 +5,19 @@ import Link from 'next/link';
 import { useFormState } from 'react-dom';
 import styles from  './Login.Form.module.css';
 
-//import Input from './Login.InputComponent';
-//import ErrorMessage from './ErrorMessage';
-//import { login } from '../actions/login';
+import Input from '../../components/forms/input';
+//import ErrorMessage from '../'
+import login  from '../../../action/login';
 
-function FormButton({ pending }: { pending: boolean }) {
-  return (
-    <button type="submit" disabled={pending}>
+function FormButton({ pending }: { pending: boolean }) { 
+   return ( <button type="submit" disabled={pending}>
       {pending ? 'Enviando...' : 'Entrar'}
     </button>
   );
 }
 
 export default function LoginForm() {
-  const [state, formAction] = useFormState(login, {
+  const [state, formAction] = useFormState( login , {
     ok: false,
     error: '',
     data: null,
@@ -37,7 +36,7 @@ export default function LoginForm() {
       <form action={handleAction} className={styles.form}>
         <Input label="Usuário" name="username" type="text" />
         <Input label="Senha" name="password" type="password" />
-        {state.error && <ErrorMessage error={state.error} />}
+       {state.error && <ErrorMessage error={state.error} />}
         <FormButton pending={isPending} />
       </form>
 
